@@ -48,6 +48,45 @@
 
 @end
 
+@protocol MSRewardInterstitialDelegate <NSObject>
+
+//插屏式激励视频广告打开
+- (void)MSRewardInterstitialAdDidOpen;
+
+//插屏式激励视频广告点击
+- (void)MSRewardInterstitialAdDidCilck;
+
+//插屏式激励视频广告关闭
+- (void)MSRewardInterstitialAdDidClose;
+
+//准备发放奖励
+- (void)MSRewardInterstitialAdDidRewardUserWithReward;
+
+@optional
+
+//插屏式激励视频联盟广告信息
+- (void)MSRewardInterstitialAdDidImpression:(NSDictionary *)impression;
+
+@end
+
+@protocol MSAppOpenDelegate <NSObject>
+
+//开屏广告打开
+- (void)MSAppOpenAdDidOpen;
+
+//开屏广告点击
+- (void)MSAppOpenAdDidCilck;
+
+//开屏广告关闭
+- (void)MSAppOpenAdDidClose;
+
+@optional
+
+//开屏广告联盟广告信息
+- (void)MSAppOpenAdDidImpression:(NSDictionary *)impression;
+
+@end
+
 @interface MSSDK : NSObject
 
 #pragma mark - Init
@@ -78,9 +117,29 @@
 
 + (void)presentInterstitialForAdUnitID:(NSString *)adUnitID fromViewController:(UIViewController *)viewController;
 
+#pragma mark - RewardInterstitial
+
++ (BOOL)hasRewardInterstitialAdAvailable;
+
++ (void)setRewardInterstitialDelegate:(id<MSRewardInterstitialDelegate>)rewardInterstitialDelegate;
+
++ (void)presentRewardInterstitialForAdUnitID:(NSString *)adUnitID fromViewController:(UIViewController *)viewController;
+
+#pragma mark - AppOpen
+
++ (BOOL)hasAppOpenAdAvailable;
+
++ (void)setAppOpenDelegate:(id<MSAppOpenDelegate>)appOpenDelegate;
+
++ (void)presentAppOpenAdForAdUnitID:(NSString *)adUnitID fromViewController:(UIViewController *)viewController;
+
 #pragma mark - Banner
 
 + (UIView *)initBannerView;
+
+#pragma mark - MREC
+
++ (UIView *)initMrecView;
 
 #pragma mark - GDPR
 

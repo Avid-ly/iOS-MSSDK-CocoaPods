@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 //sdk版本号
-#define MSSDKVERSIONSTRING  @"4.2.0.2"
-#define MSSDKVERSION        @"4202"
+#define MSSDKVERSIONSTRING  @"4.2.0.3"
+#define MSSDKVERSION        @"4203"
 #define MSSDKBuild          @"1"
 #define MSSDKVERSIONAndBuild ([NSString stringWithFormat:@"%@.%@",MSSDKVERSION,MSBuild])
 
