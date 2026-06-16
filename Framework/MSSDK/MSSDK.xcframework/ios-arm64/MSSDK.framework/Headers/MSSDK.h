@@ -28,6 +28,9 @@
 //激励视频广告信息
 - (void)MSRewardVideoAdDidImpression:(NSDictionary *)impression;
 
+//激励视频广告收益信息
+- (void)MSRewardVideoAdDidPayRevenue:(NSDictionary *)revenue;
+
 @end
 
 @protocol MSInterstitialDelegate <NSObject>
@@ -45,6 +48,9 @@
 
 //插屏联盟广告信息
 - (void)MSInterstitialAdDidImpression:(NSDictionary *)impression;
+
+//插屏视频广告收益信息
+- (void)MSInterstitialAdDidPayRevenue:(NSDictionary *)revenue;
 
 @end
 
@@ -67,6 +73,9 @@
 //插屏式激励视频联盟广告信息
 - (void)MSRewardInterstitialAdDidImpression:(NSDictionary *)impression;
 
+//插屏式激励视频广告收益信息
+- (void)MSRewardInterstitialAdDidPayRevenue:(NSDictionary *)revenue;
+
 @end
 
 @protocol MSAppOpenDelegate <NSObject>
@@ -84,6 +93,9 @@
 
 //开屏广告联盟广告信息
 - (void)MSAppOpenAdDidImpression:(NSDictionary *)impression;
+
+//开屏广告收益信息
+- (void)MSAppOpenAdDidPayRevenue:(NSDictionary *)revenue;
 
 @end
 
